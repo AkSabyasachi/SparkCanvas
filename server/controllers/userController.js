@@ -8,13 +8,13 @@ export const getUserCreations = async(req, res) => {
       const creations = await sql `SELECT * FROM creations WHERE user_id = ${userId} ORDER BY created_at DESC `
 
       res.json({
-         suceess: true ,
+         success: true ,
          creations
       })
 
    } catch (error) {
       res.json({
-         suceess: false ,
+         success: false ,
          message: error.message
       })
    }
@@ -26,13 +26,13 @@ export const getPublishedCreations = async(req, res) => {
       const creations = await sql `SELECT * FROM creations WHERE publish = true ORDER BY created_at DESC `
 
       res.json({
-         suceess: true ,
+         success: true ,
          creations
       })
 
    } catch (error) {
       res.json({
-         suceess: false ,
+         success: false ,
          message: error.message
       })
    }
@@ -47,7 +47,7 @@ export const toggleLikeCreation = async(req, res) => {
 
       if(!creation){
          return res.json({
-            suceess: false,
+            success: false,
             message: "Creation not found."
          })
       }
@@ -72,13 +72,13 @@ export const toggleLikeCreation = async(req, res) => {
       const creations = await sql `SELECT * FROM creations WHERE user_id = ${userId} ORDER BY created_at DESC `
 
       res.json({
-         suceess: true ,
+         success: true ,
          creations
       })
 
    } catch (error) {
       res.json({
-         suceess: false ,
+         success: false ,
          message: error.message
       })
    }
